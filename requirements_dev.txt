@@ -1,0 +1,7 @@
+black
+bumpversion
+twine
+tox
+pytest
+pytest-cov
+codecov

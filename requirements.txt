@@ -1,0 +1,2 @@
+pytz
+git+https://github.com/democritus-project/democritus-dates.git#egg=democritus-dates
