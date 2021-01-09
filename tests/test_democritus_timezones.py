@@ -1,5 +1,7 @@
 """Tests for `democritus_timezones` module."""
 
+from datetime import datetime
+
 from democritus_timezones import (
     timezone_countries,
     country_code_timezones,
@@ -8,6 +10,9 @@ from democritus_timezones import (
     country_timezone_abbreviation,
     timezone_utc_offset,
 )
+
+EXAMPLE_DATE = EXAMPLE_DATE_EST = datetime.strptime("2021-01-01 14:00", "%Y-%m-%d %H:%M")
+EXAMPLE_DATE_EDT = datetime.strptime("2021-06-13 14:00", "%Y-%m-%d %H:%M")
 
 
 def test_timezone_countries_docs_1():
@@ -26,38 +31,31 @@ def test_country_timezones_docs_1():
 
 
 def test_timezone_abbreviation_docs_1():
-    timezones_abbreviation = timezone_abbreviation('Africa/Mbabane')
+    timezones_abbreviation = timezone_abbreviation('Africa/Mbabane', EXAMPLE_DATE)
     assert timezones_abbreviation == 'SAST'
 
-    # the results of this test will change based on when in the year this test is run
-    timezones_abbreviation = timezone_abbreviation('America/New_York')
-    assert timezones_abbreviation in ['EDT', 'EST']
-
-    timezones_abbreviation = timezone_abbreviation('America/New_York', date='2019-01-01')
+    timezones_abbreviation = timezone_abbreviation('America/New_York', EXAMPLE_DATE_EST)
     assert timezones_abbreviation == 'EST'
 
-    timezones_abbreviation = timezone_abbreviation('America/New_York', date='2019-06-13')
+    timezones_abbreviation = timezone_abbreviation('America/New_York', EXAMPLE_DATE_EDT)
     assert timezones_abbreviation == 'EDT'
 
 
 def test_country_timezone_abbreviation_docs_1():
-    timezones_abbreviation = country_timezone_abbreviation('Eswatini (Swaziland)')
+    timezones_abbreviation = country_timezone_abbreviation('Eswatini (Swaziland)', EXAMPLE_DATE)
     assert timezones_abbreviation == ['SAST']
 
-    timezones_abbreviation = country_timezone_abbreviation('United States')
+    timezones_abbreviation = country_timezone_abbreviation('United States', EXAMPLE_DATE)
     assert sorted(timezones_abbreviation) == ['AKST', 'CST', 'EST', 'HST', 'MST', 'PST']
 
 
 def test_timezone_utc_offset_docs_1():
-    utc_offset = timezone_utc_offset('America/New_York')
-    assert utc_offset == -5.0
-
-    utc_offset = timezone_utc_offset('America/New_York', date='2019-01-01')
+    utc_offset = timezone_utc_offset('America/New_York', EXAMPLE_DATE_EST)
     assert utc_offset == -5.0
 
     # during the summer, EST switches to EDT and becomes four hours behind UTC
-    utc_offset = timezone_utc_offset('America/New_York', date='2019-06-13')
+    utc_offset = timezone_utc_offset('America/New_York', EXAMPLE_DATE_EDT)
     assert utc_offset == -4.0
 
-    utc_offset = timezone_utc_offset('Africa/Mbabane')
+    utc_offset = timezone_utc_offset('Africa/Mbabane', EXAMPLE_DATE)
     assert utc_offset == 2.0

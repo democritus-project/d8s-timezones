@@ -10,11 +10,10 @@ from democritus_timezones_temp_utils import (
     dict_flip,
     dict_delistify_values,
     seconds_to_hours,
-    parse_date_keyword_arg_or_use_current_date_if_none,
 )
 
 
-def pytz_timezone_object(timezone_name):
+def pytz_timezone_object(timezone_name: str):
     """Create a pytz timezone object for the given timezone_name."""
     import pytz
 
@@ -42,8 +41,7 @@ def timezones_names():
     return pytz.all_timezones
 
 
-@parse_date_keyword_arg_or_use_current_date_if_none
-def timezone_utc_offset(timezone_name, *, date=None):
+def timezone_utc_offset(timezone_name: str, date):
     """Find how many hours the given timezone is off from UTC."""
     pytz_object = pytz_timezone_object(timezone_name)
     offset = pytz_object.utcoffset(date)
@@ -52,17 +50,16 @@ def timezone_utc_offset(timezone_name, *, date=None):
 
 
 @map_first_arg
-@parse_date_keyword_arg_or_use_current_date_if_none
-def timezone_abbreviation(timezone_name, *, date=None):
+def timezone_abbreviation(timezone_name: str, date):
     """Find the abbreviation for the given timezone_name."""
     pytz_object = pytz_timezone_object(timezone_name)
     return pytz_object.tzname(date)
 
 
-def country_timezone_abbreviation(country_name: str):
+def country_timezone_abbreviation(country_name: str, date):
     """Find the abbreviation for the given country_name."""
     timezones = country_timezones(country_name)
-    return deduplicate(timezone_abbreviation(timezones))
+    return deduplicate(timezone_abbreviation(timezones, date))
 
 
 def country_code_timezone_abbreviation(iso_3166_country_code: str):

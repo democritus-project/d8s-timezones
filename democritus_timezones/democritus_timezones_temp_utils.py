@@ -92,21 +92,3 @@ def dict_add(dictionary: Dict[Any, List[Any]], key: Any, value: Any) -> Dict[Any
     else:
         dictionary[key] = [value]
     return dictionary
-
-
-def parse_date_keyword_arg_or_use_current_date_if_none(func):
-    """If func takes a date keyword, if the date keyword is None use the current date, otherwise, parse the date."""
-
-    @functools.wraps(func)
-    def wrapper(*args, **kwargs):
-        from democritus_dates import date_now, date_parse
-
-        # if there is no `date` keyword argument, provide one
-        if not kwargs.get('date'):
-            kwargs['date'] = date_now()
-        # if there is a `date` keyword argument, parse the input
-        else:
-            kwargs['date'] = date_parse(kwargs['date'])
-        return func(*args, **kwargs)
-
-    return wrapper
