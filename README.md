@@ -4,7 +4,9 @@
 [![Build Status](https://travis-ci.com/democritus-project/democritus-timezones.svg?branch=master)](https://travis-ci.com/democritus-project/democritus-timezones)
 [![codecov](https://codecov.io/gh/democritus-project/democritus-timezones/branch/master/graph/badge.svg?token=71AUI2UE08)](https://codecov.io/gh/democritus-project/democritus-timezones)
 
-Democritus functions for working with timezones.
+Democritus functions<sup>[1]</sup> for working with timezones.
+
+[1] Democritus functions are <i>simple, effective, modular, well-tested, and well-documented</i> Python functions.
 
 ## Usage
 

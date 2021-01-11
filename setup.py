@@ -29,7 +29,7 @@ setup(
     install_requires=requirements,
     license="MIT license",
     zip_safe=True,
-    keywords='democritus_timezones',
+    keywords='timezone,timezones,democritus,utility,utils,timezone utility,timezone utils',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
