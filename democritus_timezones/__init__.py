@@ -6,8 +6,7 @@ except ImportError:
 try:
     __version__ = version('democritus_timezones')
 except PackageNotFoundError:
-    # package is not installed
-    message = 'Unable to find a version number for "democritus_timezones"; This is likely indicates the installation of this library failed. Please try re-installing it.'
+    message = 'Unable to find a version number for "democritus_timezones". This likely indicates the library was installed improperly. Please try re-installing it.'
     print(message)
 
 __author__ = '''Floyd Hightower'''
