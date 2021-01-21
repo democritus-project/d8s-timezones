@@ -4,8 +4,11 @@
 name: Upload Python Package
 
 on:
+  push:
+    tags:
+      - '20*'
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   deploy:
