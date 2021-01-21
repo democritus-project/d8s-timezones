@@ -1,10 +1,8 @@
 """Democritus functions for working with timezones."""
 
-import os
-import sys
+import pytz
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
-from democritus_timezones_temp_utils import (
+from .democritus_timezones_temp_utils import (
     map_first_arg,
     deduplicate,
     dict_flip,
@@ -15,29 +13,21 @@ from democritus_timezones_temp_utils import (
 
 def pytz_timezone_object(timezone_name: str):
     """Create a pytz timezone object for the given timezone_name."""
-    import pytz
-
     return pytz.timezone(timezone_name)
 
 
 def pytz_country_names():
     """Get a dictionary with countries's ISO 3166 country code as keys and the country name as the value."""
-    import pytz
-
     return pytz.country_names
 
 
 def pytz_country_timezones():
     """Get a dictionary with countries's names as keys and the timezones as values."""
-    import pytz
-
     return pytz.country_timezones
 
 
 def timezones_names():
     """Get a list of all timezones."""
-    import pytz
-
     return pytz.all_timezones
 
 
