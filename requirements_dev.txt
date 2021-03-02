@@ -1,7 +1,12 @@
-black
-bumpversion
-twine
-tox
+bandit
+black; python_version > '3.5'
+codecov
+flake8
+flake8-cognitive-complexity
+ipython
+mypy
+pylint
 pytest
 pytest-cov
-codecov
+democritus_file_system
+democritus_strings
