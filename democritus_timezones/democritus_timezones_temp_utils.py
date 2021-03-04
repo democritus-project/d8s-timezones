@@ -2,10 +2,11 @@
 
 import copy
 import functools
-from typing import List, Any, Iterable, Dict
+from typing import Any, Dict, Iterable, List
 
 
-def seconds_to_hours(seconds: int) -> int:
+def seconds_to_hours(seconds: int) -> float:
+    """Convert seconds to hours."""
     return seconds / 60 / 60
 
 
@@ -59,7 +60,7 @@ def dict_delistify_values(dictionary: dict) -> dict:
 @map_first_arg
 def dict_flip(dictionary: dict, *, flatten_values: bool = False, flip_lists_and_sets: bool = False) -> dict:
     """Flip the dictionary's keys and values; all of the values become keys and keys become values."""
-    new_dict = {}
+    new_dict: Dict[Any, Any] = {}
 
     for key, value in dictionary.items():
         if not is_valid_dict_key(value):
@@ -70,9 +71,9 @@ def dict_flip(dictionary: dict, *, flatten_values: bool = False, flip_lists_and_
                         temp_dict = dict_add(temp_dict, i, key)
                     except TypeError as e:
                         message = f'Unable to flip <<{value}>> because it contains items of a type which cannot be the keys for dictionaries.'
-                        raise TypeError(message)
-                else:
-                    new_dict.update(temp_dict)
+                        raise TypeError(message) from e
+                    else:
+                        new_dict.update(temp_dict)
         else:
             new_dict = dict_add(new_dict, value, key)
 

@@ -3,16 +3,25 @@
 from datetime import datetime
 
 from democritus_timezones import (
-    timezone_countries,
+    country_code_timezone_abbreviation,
     country_code_timezones,
+    country_timezone_abbreviation,
     country_timezones,
     timezone_abbreviation,
-    country_timezone_abbreviation,
+    timezone_countries,
     timezone_utc_offset,
 )
 
 EXAMPLE_DATE = EXAMPLE_DATE_EST = datetime.strptime("2021-01-01 14:00", "%Y-%m-%d %H:%M")
 EXAMPLE_DATE_EDT = datetime.strptime("2021-06-13 14:00", "%Y-%m-%d %H:%M")
+
+
+def test_country_code_timezone_abbreviation_docs_1():
+    result = country_code_timezone_abbreviation('US', EXAMPLE_DATE)
+    assert sorted(result) == ['AKST', 'CST', 'EST', 'HST', 'MST', 'PST']
+
+    result = country_code_timezone_abbreviation('SA', EXAMPLE_DATE)
+    assert sorted(result) == ['+03']
 
 
 def test_timezone_countries_docs_1():

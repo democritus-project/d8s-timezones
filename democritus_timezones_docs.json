@@ -1,0 +1,171 @@
+{
+    "functions": [
+        {
+            "name": "pytz_timezone_object",
+            "docstring": "Create a pytz timezone object for the given timezone_name.",
+            "signature": "(timezone_name: str)",
+            "examples": [],
+            "changes": [
+                {
+                    "date": "2021-01-27",
+                    "type": "addition",
+                    "note": "Function added to democritus_timezones module."
+                }
+            ],
+            "exceptions": []
+        },
+        {
+            "name": "pytz_country_names",
+            "docstring": "Get a dictionary with countries's ISO 3166 country code as keys and the country name as the value.",
+            "signature": "()",
+            "examples": [],
+            "changes": [
+                {
+                    "date": "2021-01-27",
+                    "type": "addition",
+                    "note": "Function added to democritus_timezones module."
+                }
+            ],
+            "exceptions": []
+        },
+        {
+            "name": "pytz_country_timezones",
+            "docstring": "Get a dictionary with countries's names as keys and the timezones as values.",
+            "signature": "()",
+            "examples": [],
+            "changes": [
+                {
+                    "date": "2021-01-27",
+                    "type": "addition",
+                    "note": "Function added to democritus_timezones module."
+                }
+            ],
+            "exceptions": []
+        },
+        {
+            "name": "timezones_names",
+            "docstring": "Get a list of all timezones.",
+            "signature": "()",
+            "examples": [],
+            "changes": [
+                {
+                    "date": "2021-01-27",
+                    "type": "addition",
+                    "note": "Function added to democritus_timezones module."
+                }
+            ],
+            "exceptions": []
+        },
+        {
+            "name": "timezone_utc_offset",
+            "docstring": "Find how many hours the given timezone is off from UTC.",
+            "signature": "(timezone_name: str, date)",
+            "examples": [
+                "def test_timezone_utc_offset_docs_1():\n    utc_offset = timezone_utc_offset('America/New_York', EXAMPLE_DATE_EST)\n    assert utc_offset == -5.0\n\n    # during the summer, EST switches to EDT and becomes four hours behind UTC\n    utc_offset = timezone_utc_offset('America/New_York', EXAMPLE_DATE_EDT)\n    assert utc_offset == -4.0\n\n    utc_offset = timezone_utc_offset('Africa/Mbabane', EXAMPLE_DATE)\n    assert utc_offset == 2.0"
+            ],
+            "changes": [
+                {
+                    "date": "2021-01-27",
+                    "type": "addition",
+                    "note": "Function added to democritus_timezones module."
+                }
+            ],
+            "exceptions": []
+        },
+        {
+            "name": "timezone_abbreviation",
+            "docstring": "Find the abbreviation for the given timezone_name.",
+            "signature": "(timezone_name: str, date)",
+            "examples": [
+                "def test_timezone_abbreviation_docs_1():\n    timezones_abbreviation = timezone_abbreviation('Africa/Mbabane', EXAMPLE_DATE)\n    assert timezones_abbreviation == 'SAST'\n\n    timezones_abbreviation = timezone_abbreviation('America/New_York', EXAMPLE_DATE_EST)\n    assert timezones_abbreviation == 'EST'\n\n    timezones_abbreviation = timezone_abbreviation('America/New_York', EXAMPLE_DATE_EDT)\n    assert timezones_abbreviation == 'EDT'"
+            ],
+            "changes": [
+                {
+                    "date": "2021-01-27",
+                    "type": "addition",
+                    "note": "Function added to democritus_timezones module."
+                }
+            ],
+            "exceptions": []
+        },
+        {
+            "name": "country_timezone_abbreviation",
+            "docstring": "Find the abbreviation for the given country_name.",
+            "signature": "(country_name: str, date)",
+            "examples": [
+                "def test_country_timezone_abbreviation_docs_1():\n    timezones_abbreviation = country_timezone_abbreviation('Eswatini (Swaziland)', EXAMPLE_DATE)\n    assert timezones_abbreviation == ['SAST']\n\n    timezones_abbreviation = country_timezone_abbreviation('United States', EXAMPLE_DATE)\n    assert sorted(timezones_abbreviation) == ['AKST', 'CST', 'EST', 'HST', 'MST', 'PST']"
+            ],
+            "changes": [
+                {
+                    "date": "2021-01-27",
+                    "type": "addition",
+                    "note": "Function added to democritus_timezones module."
+                }
+            ],
+            "exceptions": []
+        },
+        {
+            "name": "country_code_timezone_abbreviation",
+            "docstring": "Find the abbreviation for the given iso_3166_country_code.",
+            "signature": "(iso_3166_country_code: str)",
+            "examples": [],
+            "changes": [
+                {
+                    "date": "2021-01-27",
+                    "type": "addition",
+                    "note": "Function added to democritus_timezones module."
+                }
+            ],
+            "exceptions": []
+        },
+        {
+            "name": "country_code_timezones",
+            "docstring": "Find the timezones for the country with the given iso_3166_country_code.",
+            "signature": "(iso_3166_country_code)",
+            "examples": [
+                "def test_country_code_timezones_docs_1():\n    timezones = country_code_timezones('SZ')\n    assert timezones == ['Africa/Mbabane']"
+            ],
+            "changes": [
+                {
+                    "date": "2021-01-27",
+                    "type": "addition",
+                    "note": "Function added to democritus_timezones module."
+                }
+            ],
+            "exceptions": []
+        },
+        {
+            "name": "country_timezones",
+            "docstring": "Find the timezones for the given country.",
+            "signature": "(country_name)",
+            "examples": [
+                "def test_country_timezones_docs_1():\n    timezones = country_timezones('Eswatini (Swaziland)')\n    assert timezones == ['Africa/Mbabane']"
+            ],
+            "changes": [
+                {
+                    "date": "2021-01-27",
+                    "type": "addition",
+                    "note": "Function added to democritus_timezones module."
+                }
+            ],
+            "exceptions": []
+        },
+        {
+            "name": "timezone_countries",
+            "docstring": "Find countries in the given timezone_name.",
+            "signature": "(timezone_name)",
+            "examples": [
+                "def test_timezone_countries_docs_1():\n    countries = timezone_countries('Africa/Mbabane')\n    assert countries == ['Eswatini (Swaziland)']"
+            ],
+            "changes": [
+                {
+                    "date": "2021-01-27",
+                    "type": "addition",
+                    "note": "Function added to democritus_timezones module."
+                }
+            ],
+            "exceptions": []
+        }
+    ],
+    "module": "democritus_timezones"
+}
