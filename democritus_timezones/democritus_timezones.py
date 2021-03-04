@@ -2,13 +2,7 @@
 
 import pytz
 
-from .democritus_timezones_temp_utils import (
-    map_first_arg,
-    deduplicate,
-    dict_flip,
-    dict_delistify_values,
-    seconds_to_hours,
-)
+from .democritus_timezones_temp_utils import deduplicate, dict_flip, map_first_arg, seconds_to_hours
 
 
 def pytz_timezone_object(timezone_name: str):
@@ -52,10 +46,10 @@ def country_timezone_abbreviation(country_name: str, date):
     return deduplicate(timezone_abbreviation(timezones, date))
 
 
-def country_code_timezone_abbreviation(iso_3166_country_code: str):
+def country_code_timezone_abbreviation(iso_3166_country_code: str, date):
     """Find the abbreviation for the given iso_3166_country_code."""
     timezones = country_code_timezones(iso_3166_country_code)
-    return deduplicate(timezone_abbreviation(timezones))
+    return deduplicate(timezone_abbreviation(timezones, date))
 
 
 def country_code_timezones(iso_3166_country_code):
@@ -89,8 +83,8 @@ def timezone_countries(timezone_name):
     country_name_data = pytz_country_names()
     matching_country_names = []
 
-    for country_code, country_timezones in country_timezones_dict.items():
-        if timezone_name in country_timezones:
+    for country_code, country_timezone_list in country_timezones_dict.items():
+        if timezone_name in country_timezone_list:
             matching_country_names.append(country_name_data[country_code])
 
     return matching_country_names
