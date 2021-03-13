@@ -1,8 +1,8 @@
-"""Tests for `democritus_timezones` module."""
+"""Tests for `d8s_timezones` module."""
 
 from datetime import datetime
 
-from democritus_timezones import (
+from d8s_timezones import (
     country_code_timezone_abbreviation,
     country_code_timezones,
     country_timezone_abbreviation,
