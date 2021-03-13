@@ -1,8 +1,8 @@
 # Democritus Timezones
 
-[![PyPI](https://img.shields.io/pypi/v/democritus-timezones.svg)](https://pypi.python.org/pypi/democritus-timezones)
-[![Build Status](https://travis-ci.com/democritus-project/democritus-timezones.svg?branch=main)](https://travis-ci.com/democritus-project/democritus-timezones)
-[![codecov](https://codecov.io/gh/democritus-project/democritus-timezones/branch/main/graph/badge.svg?token=71AUI2UE08)](https://codecov.io/gh/democritus-project/democritus-timezones)
+[![PyPI](https://img.shields.io/pypi/v/d8s-timezones.svg)](https://pypi.python.org/pypi/d8s-timezones)
+[![Build Status](https://travis-ci.com/democritus-project/d8s-timezones.svg?branch=main)](https://travis-ci.com/democritus-project/d8s-timezones)
+[![codecov](https://codecov.io/gh/democritus-project/d8s-timezones/branch/main/graph/badge.svg?token=71AUI2UE08)](https://codecov.io/gh/democritus-project/d8s-timezones)
 
 Democritus functions<sup>[1]</sup> for working with timezones.
 
