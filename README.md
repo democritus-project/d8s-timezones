@@ -1,8 +1,11 @@
 # Democritus Timezones
 
 [![PyPI](https://img.shields.io/pypi/v/d8s-timezones.svg)](https://pypi.python.org/pypi/d8s-timezones)
-[![Build Status](https://travis-ci.com/democritus-project/d8s-timezones.svg?branch=main)](https://travis-ci.com/democritus-project/d8s-timezones)
-[![codecov](https://codecov.io/gh/democritus-project/d8s-timezones/branch/main/graph/badge.svg?token=71AUI2UE08)](https://codecov.io/gh/democritus-project/d8s-timezones)
+[![CI](https://github.com/democritus-project/d8s-timezones/workflows/CI/badge.svg)](https://github.com/democritus-project/d8s-timezones/actions)
+[![Lint](https://github.com/democritus-project/d8s-timezones/workflows/Lint/badge.svg)](https://github.com/democritus-project/d8s-timezones/actions)
+[![codecov](https://codecov.io/gh/democritus-project/d8s-timezones/branch/main/graph/badge.svg?token=V0WOIXRGMM)](https://codecov.io/gh/democritus-project/d8s-timezones)
+[![The Democritus Project uses semver version 2.0.0](https://img.shields.io/badge/-semver%20v2.0.0-22bfda)](https://semver.org/spec/v2.0.0.html)
+[![The Democritus Project uses black to format code](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 Democritus functions<sup>[1]</sup> for working with timezones.
 
