@@ -14,9 +14,52 @@ Democritus functions<sup>[1]</sup> for working with timezones.
 
 We use `d8s` as an abbreviation for `democritus` (you can read more about this [here](https://github.com/democritus-project/roadmap#what-is-d8s)).
 
-## Usage
+## Functions
 
-Coming soon...
+  - ```python
+    def pytz_timezone_object(timezone_name: str):
+        """Create a pytz timezone object for the given timezone_name."""
+    ```
+  - ```python
+    def pytz_country_names():
+        """Get a dictionary with countries's ISO 3166 country code as keys and the country name as the value."""
+    ```
+  - ```python
+    def pytz_country_timezones():
+        """Get a dictionary with countries's names as keys and the timezones as values."""
+    ```
+  - ```python
+    def timezones_names():
+        """Get a list of all timezones."""
+    ```
+  - ```python
+    def timezone_utc_offset(timezone_name: str, date):
+        """Find how many hours the given timezone is off from UTC."""
+    ```
+  - ```python
+    def timezone_abbreviation(timezone_name: str, date):
+        """Find the abbreviation for the given timezone_name."""
+    ```
+  - ```python
+    def country_timezone_abbreviation(country_name: str, date):
+        """Find the abbreviation for the given country_name."""
+    ```
+  - ```python
+    def country_code_timezone_abbreviation(iso_3166_country_code: str, date):
+        """Find the abbreviation for the given iso_3166_country_code."""
+    ```
+  - ```python
+    def country_code_timezones(iso_3166_country_code):
+        """Find the timezones for the country with the given iso_3166_country_code."""
+    ```
+  - ```python
+    def country_timezones(country_name):
+        """Find the timezones for the given country."""
+    ```
+  - ```python
+    def timezone_countries(timezone_name):
+        """Find countries in the given timezone_name."""
+    ```
 
 ## Development
 
