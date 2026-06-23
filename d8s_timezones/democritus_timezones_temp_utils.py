@@ -70,7 +70,7 @@ def dict_flip(dictionary: dict, *, flatten_values: bool = False, flip_lists_and_
                     try:
                         temp_dict = dict_add(temp_dict, i, key)
                     except TypeError as e:
-                        message = f'Unable to flip <<{value}>> because it contains items of a type which cannot be the keys for dictionaries.'
+                        message = f"Unable to flip <<{value}>> because it contains items of a type which cannot be the keys for dictionaries."
                         raise TypeError(message) from e
                     else:
                         new_dict.update(temp_dict)
