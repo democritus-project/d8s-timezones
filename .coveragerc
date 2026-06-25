@@ -1,6 +1,5 @@
 [run]
 omit =
     tests/*
-    setup.py
     conftest.py
-    d8s_timezones/d8s_timezones_temp_utils.py
+    d8s_timezones/democritus_timezones_temp_utils.py
